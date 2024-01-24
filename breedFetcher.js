@@ -5,7 +5,6 @@ request('https://api.thecatapi.com/v1/breeds/search?q=siberian', (error, respons
     console.log("there was an error: ", error);
   } else {
     const data = JSON.parse(body);
-    console.log(data);
-    console.log(typeof data);
+    console.log(data[0]);
   }
 })

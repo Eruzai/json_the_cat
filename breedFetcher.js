@@ -9,10 +9,10 @@ request('https://api.thecatapi.com/v1/breeds/search?q=' + breed, (error, respons
     console.log("❌ Check your URL. Error code: ", response.statusCode); // if the URL only partially works, prints an error code
   } else {
     const data = JSON.parse(body);
-    if (data[0]) {
+    if (data[0]) { // if the data exists print the data!
       console.log(data[0]);
     } else {
-      console.log("❌ Breed not found! 😿");
+      console.log("❌ Breed not found! 😿"); // message printed when no data found for breed
     }
   }
-})
+});

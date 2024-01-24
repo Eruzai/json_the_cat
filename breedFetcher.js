@@ -4,9 +4,15 @@ const breed = process.argv[2];
 
 request('https://api.thecatapi.com/v1/breeds/search?q=' + breed, (error, response, body) => {
   if (error) {
-    console.log("there was an error: ", error);
+    console.log("❌ Invalid URL"); // If the URL doesn't work, prints a message to console.
+  } else if (response.statusCode !== 200) {
+    console.log("❌ Check your URL. Error code: ", response.statusCode); // if the URL only partially works, prints an error code
   } else {
     const data = JSON.parse(body);
-    console.log(data[0]);
+    if (data[0]) {
+      console.log(data[0]);
+    } else {
+      console.log("❌ Breed not found! 😿");
+    }
   }
 })

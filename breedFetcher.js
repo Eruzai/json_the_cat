@@ -19,6 +19,6 @@ const fetchBreedDescription = function(breedName, callback) {
     }
     callback(errorValue, descriptionValue); // passes our error or description back to index.js
   });
-}
+};
 
 module.exports = { fetchBreedDescription };

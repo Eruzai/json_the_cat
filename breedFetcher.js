@@ -12,7 +12,7 @@ const fetchBreedDescription = function(breedName, callback) {
     } else {
       const data = JSON.parse(body);
       if (data[0]) { // if the data exists print the data!
-        descriptionValue = data[0];
+        descriptionValue = data[0].description; // just the breed's description data
       } else {
         errorValue = "❌ Breed not found! 😿"; // message printed when no data found for breed
       }
